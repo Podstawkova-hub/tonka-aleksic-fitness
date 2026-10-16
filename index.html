@@ -21,7 +21,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -228,22 +227,27 @@ nav a:hover { color: var(--gold); }
 .sparkles span:nth-child(1) {
   top: 20%; left: 15%;
 }
+
 .sparkles span:nth-child(2) {
   top: 30%; left: 85%;
   animation-delay: .8s;
 }
+
 .sparkles span:nth-child(3) {
   top: 65%; left: 12%;
   animation-delay: 1.5s;
 }
+
 .sparkles span:nth-child(4) {
   top: 78%; left: 75%;
   animation-delay: .4s;
 }
+
 .sparkles span:nth-child(5) {
   top: 12%; left: 65%;
   animation-delay: 2s;
 }
+
 .sparkles span:nth-child(6) {
   top: 55%; left: 93%;
   animation-delay: 1.1s;
@@ -465,11 +469,11 @@ footer {
   .container { padding: 40px 6%; }
 }
 
-/* NOVA MOBILOVA VERZIA */
+/* MOBILOVA VERZIA */
 
 @media(max-width:480px) {
 
-  /* UVOD VYPLNI CELU OBRAZOVKU */
+  /* NOVY MOBILNY UVODNY OBRAZOK */
 
   #intro {
     width: 100%;
@@ -481,22 +485,17 @@ footer {
   .intro-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: 35% center;
+    object-fit: contain;
+    object-position: center;
   }
 
-  /*
-  POUZIJEME SAMOSTATNY MOBILNY OBRAZOK.
-  AK NIE JE NAHRATY, ZOSTANE POVODNY.
-  */
-
-  /* ODSTRANENIE DUPLICITNEHO TEXTU */
+  /* ZIADNY DUPLICITNY TEXT NA MOBILE */
 
   .intro-bottom {
     display: none !important;
   }
 
-  /* HLAVNY WEB */
+  /* HLAVNY WEB - BEZ ZMIEN */
 
   header {
     padding: 12px 4%;
@@ -606,10 +605,12 @@ footer {
 <div id="intro">
 
   <picture>
+    <!-- MOBIL: NOVY VYSKOVY OBRAZOK -->
     <source
       media="(max-width:480px)"
-      srcset="WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg">
+      srcset="image.png">
 
+    <!-- POCITAC: POVODNY SIROKY OBRAZOK -->
     <img
       class="intro-image"
       src="WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg"
