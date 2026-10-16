@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#15110e">
-<meta name="description" content="Tonka Aleksic – osobná fitness trénerka v Bratislave. Individuálne tréningy v S Fitko, Jarošova 1.">
+<meta name="description" content="Tonka Aleksic – osobná a kondičná trénerka v Bratislave. Silové a kondičné tréningy, individuálny prístup.">
 <title>TONKA ALEKSIC | Fitness Bratislava</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@ a { color: inherit; }
 button { font: inherit; cursor: pointer; }
 section { scroll-margin-top: 90px; }
 
-/* UVODNA OBRAZOVKA */
+/* UVODNA OBRAZOVKA – BEZ ZMENY */
 
 #intro {
   position: fixed;
@@ -156,7 +156,7 @@ nav a:hover { color: var(--gold); }
   color: #17110a;
 }
 
-/* HLAVNA STRANKA */
+/* HLAVNA STRANKA – POVODNY VZHLAD */
 
 .hero {
   max-width: 1700px;
@@ -273,7 +273,7 @@ nav a:hover { color: var(--gold); }
   }
 }
 
-/* OBSAH WEBU */
+/* OBSAH */
 
 .content {
   background: linear-gradient(
@@ -331,7 +331,79 @@ h2 {
 
 .achievement p { margin: 5px 0; }
 
-/* TRI STLPCE BEZ RAMCEKOV */
+/* NOVA CAST – MOJA CESTA K SILE */
+
+.my-journey {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(229,184,93,.35);
+}
+
+.my-journey h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(25px,3vw,34px);
+  line-height: 1.3;
+  color: var(--lightgold);
+  margin: 0 0 20px;
+}
+
+.my-journey p {
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 0 0 15px;
+}
+
+.my-journey strong {
+  color: var(--lightgold);
+}
+
+.journey-message {
+  color: var(--lightgold);
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 18px !important;
+}
+
+/* TRI ZLATE UDAJE */
+
+.journey-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.journey-stat {
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 2px solid var(--gold);
+  border-bottom: 1px solid rgba(229,184,93,.25);
+  background: linear-gradient(
+    180deg,rgba(229,184,93,.10),transparent
+  );
+}
+
+.journey-number {
+  display: block;
+  color: #ffd276;
+  font-weight: 900;
+  font-size: clamp(21px,2.7vw,33px);
+  line-height: 1.2;
+  text-shadow: 0 0 14px rgba(229,184,93,.2);
+  white-space: nowrap;
+}
+
+.journey-label {
+  display: block;
+  color: #f1d7a5;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* TRENINGY, CENNIK, KONTAKT */
 
 .details {
   display: grid;
@@ -477,15 +549,15 @@ footer {
   }
 
   .container { padding: 40px 6%; }
+
+  .journey-stats {
+    gap: 10px;
+  }
 }
 
-/* MOBIL */
+/* MOBIL – POVODNE FOTOGRAFIE */
 
 @media(max-width:480px) {
-
-  /* PRVA STRANKA:
-     TONKA V TYRKYSOVOM
-     PORTRETNY OBRAZOK */
 
   #intro {
     width: 100%;
@@ -509,14 +581,9 @@ footer {
     object-position: center;
   }
 
-  /* ZIADNE DUPLICITNE NAPISY */
-
   .intro-bottom {
     display: none !important;
   }
-
-  /* DRUHA STRANKA:
-     POVODNE ROZLOZENIE */
 
   header {
     padding: 12px 4%;
@@ -594,6 +661,32 @@ footer {
     line-height: 1.8;
   }
 
+  .my-journey {
+    margin-top: 30px;
+  }
+
+  .my-journey h3 {
+    font-size: 28px;
+  }
+
+  .journey-stats {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 7px;
+    margin-top: 25px;
+  }
+
+  .journey-stat {
+    padding: 16px 5px;
+  }
+
+  .journey-number {
+    font-size: clamp(17px,5vw,23px);
+  }
+
+  .journey-label {
+    font-size: 10px;
+  }
+
   .details {
     gap: 35px;
     margin-top: 45px;
@@ -621,18 +714,16 @@ footer {
 
 <body>
 
-<!-- PRVA UVODNA OBRAZOVKA -->
+<!-- UVODNA OBRAZOVKA – BEZ ZMENY -->
 
 <div id="intro">
 
   <picture class="intro-picture">
 
-    <!-- MOBIL: TONKA V TYRKYSOVOM -->
     <source
       media="(max-width:480px)"
       srcset="tonka%20II.png?v=20261016">
 
-    <!-- POCITAC: POVODNY UVOD -->
     <img
       class="intro-image"
       src="WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg"
@@ -681,8 +772,7 @@ footer {
 
 <main class="content">
 
-<!-- DRUHA STRANKA:
-     TONKA V CIERNO-ZLATOM -->
+<!-- HLAVNA FOTOGRAFIA A MOTTO – BEZ ZMENY -->
 
 <section id="home" class="hero">
 
@@ -721,7 +811,9 @@ footer {
 
   <div>
 
-    <div class="eyebrow">TONKA ALEKSIC</div>
+    <div class="eyebrow" data-i18n="trainerType">
+      OSOBNÁ A KONDIČNÁ TRÉNERKA
+    </div>
 
     <h2 data-i18n="aboutTitle">O mne</h2>
 
@@ -740,6 +832,78 @@ footer {
       Ide o to, aby si objavil, čo všetko dokážeš.
     </p>
 
+    <!-- NOVY OSOBNY PRIBEH -->
+
+    <div class="my-journey">
+
+      <h3 data-i18n="journeyTitle">
+        Moja cesta k sile
+      </h3>
+
+      <p data-i18n="journey1">
+        Po tridsiatke sa mi podarilo schudnúť
+        27 kilogramov. Nebola to len zmena postavy,
+        ale začiatok úplne novej životnej cesty.
+      </p>
+
+      <p data-i18n="journey2">
+        Už 16 rokov sa každodenne venujem silovým
+        a kondičným tréningom. Na vlastnej koži som
+        spoznala, čo znamená odhodlanie, disciplína,
+        vytrvalosť a prekonávanie vlastných hraníc.
+      </p>
+
+      <p data-i18n="journey3">
+        Svoje praktické skúsenosti som postupne
+        rozšírila aj o odborné vzdelanie.
+        Absolvovala som kurz trénera I. stupňa,
+        kurz trénera II. stupňa a kurz BOSU trénera.
+      </p>
+
+      <p data-i18n="journey4">
+        Dnes spájam vlastnú skúsenosť s chudnutím,
+        dlhoročnú tréningovú prax, odborné vzdelanie
+        a poznatky, ktoré som získala od skúsených
+        trénerov.
+      </p>
+
+      <p class="journey-message" data-i18n="journey5">
+        Verím, že nikdy nie je neskoro začať.
+        Pretože skutočná sila sa začína
+        rozhodnutím niečo zmeniť.
+      </p>
+
+      <!-- TRI ZLATE UDAJE -->
+
+      <div class="journey-stats">
+
+        <div class="journey-stat">
+          <span class="journey-number">−27 kg</span>
+          <span class="journey-label" data-i18n="stat1">
+            Moja premena
+          </span>
+        </div>
+
+        <div class="journey-stat">
+          <span class="journey-number">16 rokov</span>
+          <span class="journey-label" data-i18n="stat2">
+            Silových a kondičných tréningov
+          </span>
+        </div>
+
+        <div class="journey-stat">
+          <span class="journey-number">3 kurzy</span>
+          <span class="journey-label" data-i18n="stat3">
+            Tréner I., II. stupňa a BOSU
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- POVODNA SPORTOVA SKUSENOST -->
+
     <div class="achievement">
 
       <strong data-i18n="achievementTitle">
@@ -755,6 +919,8 @@ footer {
     </div>
 
   </div>
+
+  <!-- POVODNA FOTOGRAFIA – BEZ ZMENY -->
 
   <div class="about-photo">
     <img
@@ -774,28 +940,31 @@ footer {
 
   <div class="service">
     <strong data-i18n="service1">
-      Individuálny tréning
+      Silové tréningy
     </strong>
     <p data-i18n="service1desc">
-      Osobný prístup a tréning prispôsobený tvojim cieľom.
+      Budovanie sily, spevnenie tela a rozvoj
+      fyzickej výkonnosti.
     </p>
   </div>
 
   <div class="service">
     <strong data-i18n="service2">
-      Motivácia a podpora
+      Kondičné tréningy
     </strong>
     <p data-i18n="service2desc">
-      Spoločne budeme pracovať na tvojom pokroku.
+      Zlepšenie vytrvalosti, kondície
+      a celkovej fyzickej pripravenosti.
     </p>
   </div>
 
   <div class="service">
     <strong data-i18n="service3">
-      Tvoja cesta
+      Individuálny prístup
     </strong>
     <p data-i18n="service3desc">
-      Každý krok vpred sa počíta.
+      Tréning prispôsobený tvojim potrebám,
+      možnostiam a osobným cieľom.
     </p>
   </div>
 
@@ -807,7 +976,7 @@ footer {
 
   <h2 data-i18n="priceTitle">Cenník</h2>
 
-  <div class="eyebrow" data-i18n="service1">
+  <div class="eyebrow" data-i18n="priceService">
     Individuálny tréning
   </div>
 
@@ -831,6 +1000,40 @@ footer {
     ktorý bude vyhovovať práve tebe.
   </p>
 
+  <!-- TELEFON -->
+
+  <div class="contact-line">
+
+    <span class="symbol">☎</span>
+
+    <div>
+      <strong data-i18n="phoneTitle">Telefón</strong><br>
+
+      <a href="tel:+421907620664">
+        +421 907 620 664
+      </a>
+    </div>
+
+  </div>
+
+  <!-- E-MAIL -->
+
+  <div class="contact-line">
+
+    <span class="symbol">✉</span>
+
+    <div>
+      <strong>E-mail</strong><br>
+
+      <a href="mailto:tonka.toni.tonica@gmail.com">
+        tonka.toni.tonica@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+  <!-- INSTAGRAM -->
+
   <div class="contact-line">
 
     <span class="symbol">◎</span>
@@ -848,19 +1051,7 @@ footer {
 
   </div>
 
-  <div class="contact-line">
-
-    <span class="symbol">✉</span>
-
-    <div>
-      <strong>E-mail</strong><br>
-
-      <a href="mailto:tonka.toni.tonica@gmail.com">
-        tonka.toni.tonica@gmail.com
-      </a>
-    </div>
-
-  </div>
+  <!-- MIESTO TRENINGOV -->
 
   <div class="contact-line">
 
@@ -914,22 +1105,34 @@ sk: {
   navPrice: "Cenník",
   navContact: "Kontakt",
   motto: "Sila nie je len o svaloch. Je o odhodlaní, sebavedomí a viere v seba.",
+  trainerType: "OSOBNÁ A KONDIČNÁ TRÉNERKA",
   aboutTitle: "O mne",
   about1: "Volám sa Tonka Aleksic a fitness je mojou vášňou. Ako osobná trénerka v Bratislave verím, že skutočná sila sa začína v hlave. Každý človek má svoj príbeh, svoje ciele a vlastnú cestu k úspechu.",
   about2: "Mojím poslaním je pomáhať ľuďom budovať silu, sebavedomie a zdravý vzťah k pohybu. Nejde len o tréning. Ide o to, aby si objavil, čo všetko dokážeš.",
+  journeyTitle: "Moja cesta k sile",
+  journey1: "Po tridsiatke sa mi podarilo schudnúť 27 kilogramov. Nebola to len zmena postavy, ale začiatok úplne novej životnej cesty.",
+  journey2: "Už 16 rokov sa každodenne venujem silovým a kondičným tréningom. Na vlastnej koži som spoznala, čo znamená odhodlanie, disciplína, vytrvalosť a prekonávanie vlastných hraníc.",
+  journey3: "Svoje praktické skúsenosti som postupne rozšírila aj o odborné vzdelanie. Absolvovala som kurz trénera I. stupňa, kurz trénera II. stupňa a kurz BOSU trénera.",
+  journey4: "Dnes spájam vlastnú skúsenosť s chudnutím, dlhoročnú tréningovú prax, odborné vzdelanie a poznatky, ktoré som získala od skúsených trénerov.",
+  journey5: "Verím, že nikdy nie je neskoro začať. Pretože skutočná sila sa začína rozhodnutím niečo zmeniť.",
+  stat1: "Moja premena",
+  stat2: "Silových a kondičných tréningov",
+  stat3: "Tréner I., II. stupňa a BOSU",
   achievementTitle: "SKÚSENOSTI Z VRCHOLOVÉHO ŠPORTU",
   achievementText: "Tonka sa zúčastnila aj majstrovstiev sveta. Jej športová cesta a skúsenosti sú súčasťou prístupu, ktorý prináša do svojich tréningov.",
   trainingTitle: "Tréningy",
-  service1: "Individuálny tréning",
-  service1desc: "Osobný prístup a tréning prispôsobený tvojim cieľom.",
-  service2: "Motivácia a podpora",
-  service2desc: "Spoločne budeme pracovať na tvojom pokroku.",
-  service3: "Tvoja cesta",
-  service3desc: "Každý krok vpred sa počíta.",
+  service1: "Silové tréningy",
+  service1desc: "Budovanie sily, spevnenie tela a rozvoj fyzickej výkonnosti.",
+  service2: "Kondičné tréningy",
+  service2desc: "Zlepšenie vytrvalosti, kondície a celkovej fyzickej pripravenosti.",
+  service3: "Individuálny prístup",
+  service3desc: "Tréning prispôsobený tvojim potrebám, možnostiam a osobným cieľom.",
   priceTitle: "Cenník",
+  priceService: "Individuálny tréning",
   hour: "za 1 hodinu",
   contactTitle: "Kontakt",
   contactIntro: "Si pripravený urobiť prvý krok? Ozvi sa a spoločne nájdeme tréning, ktorý bude vyhovovať práve tebe.",
+  phoneTitle: "Telefón",
   locationTitle: "Kde ma nájdeš",
   mapLink: "Zobraziť na Google Maps ↗"
 },
@@ -943,22 +1146,34 @@ en: {
   navPrice: "Pricing",
   navContact: "Contact",
   motto: "Strength is not just about muscles. It is about determination, confidence and believing in yourself.",
+  trainerType: "PERSONAL AND CONDITIONING TRAINER",
   aboutTitle: "About me",
   about1: "My name is Tonka Aleksic and fitness is my passion. As a personal trainer in Bratislava, I believe that true strength starts in the mind. Everyone has their own story, goals and path to success.",
   about2: "My mission is to help people build strength, confidence and a healthy relationship with movement. It is not just about training. It is about discovering what you can achieve.",
+  journeyTitle: "My journey to strength",
+  journey1: "After turning thirty, I managed to lose 27 kilograms. It was not just a change in my appearance, but the beginning of a completely new journey in life.",
+  journey2: "For 16 years, I have dedicated myself to strength and conditioning training every day. I have experienced firsthand what determination, discipline, perseverance and pushing my limits really mean.",
+  journey3: "I gradually expanded my practical experience through professional education. I completed Level I and Level II trainer courses and a BOSU trainer course.",
+  journey4: "Today, I combine my personal weight-loss experience, years of training practice, professional education and knowledge gained from experienced coaches.",
+  journey5: "I believe it is never too late to start. Because true strength begins with the decision to change something.",
+  stat1: "My transformation",
+  stat2: "Strength and conditioning training",
+  stat3: "Level I, Level II and BOSU",
   achievementTitle: "HIGH-LEVEL SPORT EXPERIENCE",
   achievementText: "Tonka has also participated in world championships. Her sporting journey and experience shape the approach she brings to her training sessions.",
   trainingTitle: "Training",
-  service1: "Personal training",
-  service1desc: "A personal approach and training tailored to your goals.",
-  service2: "Motivation and support",
-  service2desc: "Together we will work on your progress.",
-  service3: "Your journey",
-  service3desc: "Every step forward counts.",
+  service1: "Strength training",
+  service1desc: "Building strength, toning the body and improving physical performance.",
+  service2: "Conditioning training",
+  service2desc: "Improving endurance, fitness and overall physical readiness.",
+  service3: "Individual approach",
+  service3desc: "Training tailored to your needs, abilities and personal goals.",
   priceTitle: "Pricing",
+  priceService: "Personal training",
   hour: "per 1 hour",
   contactTitle: "Contact",
   contactIntro: "Ready to take the first step? Get in touch and together we will find the right training for you.",
+  phoneTitle: "Phone",
   locationTitle: "Find me at",
   mapLink: "View on Google Maps ↗"
 },
@@ -972,22 +1187,34 @@ sr: {
   navPrice: "Cenovnik",
   navContact: "Kontakt",
   motto: "Snaga nije samo u mišićima. Ona je u odlučnosti, samopouzdanju i veri u sebe.",
+  trainerType: "LIČNI I KONDICIONI TRENER",
   aboutTitle: "O meni",
   about1: "Zovem se Tonka Aleksic i fitnes je moja strast. Kao lični trener u Bratislavi verujem da prava snaga počinje u glavi. Svako ima svoju priču, ciljeve i put do uspeha.",
   about2: "Moja misija je da pomognem ljudima da izgrade snagu, samopouzdanje i zdrav odnos prema kretanju. Nije reč samo o treningu, već o otkrivanju sopstvenih mogućnosti.",
+  journeyTitle: "Moj put do snage",
+  journey1: "Posle tridesete uspela sam da smršam 27 kilograma. To nije bila samo promena izgleda, već početak potpuno novog životnog puta.",
+  journey2: "Već 16 godina svakodnevno se bavim treninzima snage i kondicije. Na sopstvenom iskustvu naučila sam šta znače odlučnost, disciplina, istrajnost i pomeranje sopstvenih granica.",
+  journey3: "Svoje praktično iskustvo dodatno sam proširila stručnim obrazovanjem. Završila sam kurseve za trenera I i II nivoa, kao i kurs za BOSU trenera.",
+  journey4: "Danas spajam lično iskustvo mršavljenja, dugogodišnju praksu, stručno obrazovanje i znanje koje sam stekla od iskusnih trenera.",
+  journey5: "Verujem da nikada nije kasno za novi početak. Jer prava snaga počinje odlukom da nešto promenimo.",
+  stat1: "Moja transformacija",
+  stat2: "Treninga snage i kondicije",
+  stat3: "Trener I, II nivoa i BOSU",
   achievementTitle: "ISKUSTVO U VRHUNSKOM SPORTU",
   achievementText: "Tonka je učestvovala i na svetskim prvenstvima. Njeno sportsko iskustvo oblikuje pristup koji donosi na svoje treninge.",
   trainingTitle: "Treninzi",
-  service1: "Individualni trening",
-  service1desc: "Lični pristup i trening prilagođen tvojim ciljevima.",
-  service2: "Motivacija i podrška",
-  service2desc: "Zajedno ćemo raditi na tvom napretku.",
-  service3: "Tvoj put",
-  service3desc: "Svaki korak napred je važan.",
+  service1: "Treninzi snage",
+  service1desc: "Razvijanje snage, jačanje tela i poboljšanje fizičkih sposobnosti.",
+  service2: "Kondicioni treninzi",
+  service2desc: "Poboljšanje izdržljivosti, kondicije i ukupne fizičke spremnosti.",
+  service3: "Individualni pristup",
+  service3desc: "Trening prilagođen tvojim potrebama, mogućnostima i ciljevima.",
   priceTitle: "Cenovnik",
+  priceService: "Individualni trening",
   hour: "za 1 sat",
   contactTitle: "Kontakt",
   contactIntro: "Spreman si za prvi korak? Javi se i zajedno ćemo pronaći trening koji ti odgovara.",
+  phoneTitle: "Telefon",
   locationTitle: "Gde me možeš pronaći",
   mapLink: "Prikaži na Google mapama ↗"
 }
@@ -1027,7 +1254,7 @@ document.querySelectorAll("[data-lang]").forEach(btn => {
 
 setLanguage("sk");
 
-/* UVOD SA AUTOMATICKY OTVORI PO 6 SEKUNDACH */
+/* UVOD – POVODNE SPRAVANIE */
 
 const intro = document.getElementById("intro");
 let introClosed = false;
