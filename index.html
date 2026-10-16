@@ -21,6 +21,7 @@
 }
 
 * { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -34,7 +35,7 @@ a { color: inherit; }
 button { font: inherit; cursor: pointer; }
 section { scroll-margin-top: 90px; }
 
-/* PRVA UVODNA OBRAZOVKA */
+/* UVODNA OBRAZOVKA */
 
 #intro {
   position: fixed;
@@ -155,7 +156,7 @@ nav a:hover { color: var(--gold); }
   color: #17110a;
 }
 
-/* HLAVNA STRANKA - POVODNY VZHLAD */
+/* HLAVNA STRANKA */
 
 .hero {
   max-width: 1700px;
@@ -391,6 +392,7 @@ h2 {
   color: var(--lightgold);
   text-decoration: underline;
   text-underline-offset: 4px;
+  overflow-wrap: anywhere;
 }
 
 .map-link {
@@ -483,7 +485,7 @@ footer {
 
   /* PRVA STRANKA:
      TONKA V TYRKYSOVOM
-     NOVY PORTRETNY OBRAZOK */
+     PORTRETNY OBRAZOK */
 
   #intro {
     width: 100%;
@@ -503,7 +505,7 @@ footer {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 
@@ -628,7 +630,7 @@ footer {
     <!-- MOBIL: TONKA V TYRKYSOVOM -->
     <source
       media="(max-width:480px)"
-      srcset="image.png?v=20261016">
+      srcset="tonka%20II.png?v=20261016">
 
     <!-- POCITAC: POVODNY UVOD -->
     <img
@@ -853,9 +855,9 @@ footer {
     <div>
       <strong>E-mail</strong><br>
 
-      <span data-i18n="emailSoon">
-        E-mailový kontakt čoskoro doplníme.
-      </span>
+      <a href="mailto:tonka.toni.tonica@gmail.com">
+        tonka.toni.tonica@gmail.com
+      </a>
     </div>
 
   </div>
@@ -928,7 +930,6 @@ sk: {
   hour: "za 1 hodinu",
   contactTitle: "Kontakt",
   contactIntro: "Si pripravený urobiť prvý krok? Ozvi sa a spoločne nájdeme tréning, ktorý bude vyhovovať práve tebe.",
-  emailSoon: "E-mailový kontakt čoskoro doplníme.",
   locationTitle: "Kde ma nájdeš",
   mapLink: "Zobraziť na Google Maps ↗"
 },
@@ -958,7 +959,6 @@ en: {
   hour: "per 1 hour",
   contactTitle: "Contact",
   contactIntro: "Ready to take the first step? Get in touch and together we will find the right training for you.",
-  emailSoon: "Email contact will be added soon.",
   locationTitle: "Find me at",
   mapLink: "View on Google Maps ↗"
 },
@@ -988,7 +988,6 @@ sr: {
   hour: "za 1 sat",
   contactTitle: "Kontakt",
   contactIntro: "Spreman si za prvi korak? Javi se i zajedno ćemo pronaći trening koji ti odgovara.",
-  emailSoon: "Imejl kontakt će uskoro biti dodat.",
   locationTitle: "Gde me možeš pronaći",
   mapLink: "Prikaži na Google mapama ↗"
 }
@@ -1047,7 +1046,6 @@ function closeIntro() {
 document.getElementById("enterBtn")
   .addEventListener("click", closeIntro);
 
-/* NA MOBILE MOZNO KLIKNUT NA UVOD */
 intro.addEventListener("click", (event) => {
   if (window.innerWidth <= 480 &&
       !event.target.closest("button")) {
