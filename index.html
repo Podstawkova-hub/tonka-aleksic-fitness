@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TONKA ALEKSIC | Fitness Bratislava</title>
+<meta name="description" content="Tonka Aleksic – osobná fitness trénerka v Bratislave. Individuálne tréningy od 20 € za hodinu.">
+<style>
+:root {
+  --gold:#d8ad58;
+  --black:#090909;
+  --white:#f8f5ee;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--black);
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+}
+button,a {font:inherit}
+a {color:inherit;text-decoration:none}
+button {cursor:pointer}
+.gold {color:var(--gold)}
+.language {
+  display:flex;
+  gap:8px;
+}
+.language button {
+  background:transparent;
+  color:white;
+  border:1px solid #8b784f;
+  border-radius:5px;
+  padding:9px 12px;
+}
+.language button.active {
+  background:var(--gold);
+  color:#111;
+}
+#intro {
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:#050505;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  transition:opacity 1.2s,visibility 1.2s;
+}
+#intro.hide {
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.intro-photo {
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(90deg,rgba(0,0,0,.84),rgba(0,0,0,.18)),
+    url("WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg");
+  background-position:center;
+  background-size:cover;
+  animation:zoom 6s ease-out both;
+}
+@keyframes zoom {
+  from {transform:scale(1.08)}
+  to {transform:scale(1)}
+}
+.intro-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:25px;
+}
+.intro-content h1 {
+  font-size:clamp(48px,9vw,125px);
+  line-height:.95;
+  letter-spacing:.07em;
+  margin:0;
+  color:var(--gold);
+  text-shadow:0 0 35px rgba(216,173,88,.7);
+  animation:shine 2.5s ease-in-out infinite alternate;
+}
+@keyframes shine {
+  from {text-shadow:0 0 8px #6d5123}
+  to {text-shadow:0 0 42px #e7bf70}
+}
+.intro-content p {
+  letter-spacing:5px;
+  font-size:clamp(12px,2vw,18px);
+  margin:25px 0;
+}
+.intro-languages {
+  position:absolute;
+  top:25px;
+  right:25px;
+  z-index:5;
+}
+.skip {
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:12px 26px;
+  border-radius:4px;
+}
+header {
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(8,8,8,.96);
+  border-bottom:1px solid #46391f;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:18px 5%;
+  flex-wrap:wrap;
+}
+.logo {
+  color:var(--gold);
+  font-weight:900;
+  letter-spacing:2px;
+  font-size:19px;
+}
+nav {
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+nav a:hover {color:var(--gold)}
+.hero {
+  min-height:76vh;
+  display:flex;
+  align-items:center;
+  padding:80px 7%;
+  background:
+    linear-gradient(90deg,#080808 8%,rgba(0,0,0,.65),rgba(0,0,0,.15)),
+    url("WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg")
+    center/cover no-repeat;
+}
+.hero-content {max-width:650px}
+.eyebrow {
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:13px;
+}
+.hero h2 {
+  font-size:clamp(48px,7vw,100px);
+  line-height:1;
+  margin:20px 0;
+  letter-spacing:2px;
+}
+.hero p {
+  font-size:20px;
+  line-height:1.6;
+}
+.btn {
+  display:inline-block;
+  padding:16px 28px;
+  margin:12px 8px 0 0;
+  background:var(--gold);
+  color:#111;
+  font-weight:bold;
+  border:1px solid var(--gold);
+  border-radius:4px;
+  transition:.25s;
+}
+.btn:hover {
+  background:#f2d38e;
+  transform:translateY(-3px);
+}
+.btn.outline {
+  background:transparent;
+  color:var(--gold);
+}
+section.content {
+  max-width:1100px;
+  margin:auto;
+  padding:90px 24px;
+}
+.section-title {
+  color:var(--gold);
+  font-size:clamp(30px,4vw,48px);
+  margin:0 0 25px;
+}
+section.content p {
+  color:#ddd;
+  font-size:18px;
+  line-height:1.8;
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+  margin-top:35px;
+}
+.card {
+  border:1px solid #594522;
+  background:linear-gradient(145deg,#202020,#101010);
+  padding:32px;
+  border-radius:10px;
+}
+.card h3 {color:var(--gold)}
+.price {
+  font-size:48px;
+  font-weight:900;
+  color:var(--gold);
+}
+.contact {
+  text-align:center;
+  background:linear-gradient(#17130c,#090909);
+  border-top:1px solid #58451f;
+}
+footer {
+  text-align:center;
+  padding:28px;
+  border-top:1px solid #382f20;
+  color:#aaa;
+}
+@media(max-width:700px) {
+  header {justify-content:center}
+  nav {justify-content:center;font-size:13px}
+  .hero {
+    min-height:75vh;
+    background-position:60% center;
+  }
+  .hero h2 {font-size:48px}
+  .intro-photo {background-position:60% center}
+  .intro-content h1 {font-size:52px}
+  .intro-languages {right:12px;top:12px}
+  section.content {padding:65px 22px}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    animation:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <div class="intro-photo"></div>
+  <div class="intro-languages language">
+    <button data-lang="sk" class="active">SK</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="sr">SR</button>
+  </div>
+  <div class="intro-content">
+    <h1>TONKA<br>ALEKSIC</h1>
+    <p data-i18n="slogan">SILA. ELEGANCIA. ODHODLANIE.</p>
+    <button class="skip" id="skip" data-i18n="enter">
+      VSTÚPIŤ
+    </button>
+  </div>
+</div>
+
+<header>
+  <a class="logo" href="#home">TONKA ALEKSIC</a>
+  <nav>
+    <a href="#home" data-i18n="home">Domov</a>
+    <a href="#about" data-i18n="about">O mne</a>
+    <a href="#training" data-i18n="training">Tréningy</a>
+    <a href="#price" data-i18n="pricing">Cenník</a>
+    <a href="#contact" data-i18n="contact">Kontakt</a>
+  </nav>
+  <div class="language">
+    <button data-lang="sk" class="active">SK</button>
+    <button data-lang="en">EN</button>
+    <button data-lang="sr">SR</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow" data-i18n="location">
+      OSOBNÁ FITNESS TRÉNERKA | BRATISLAVA
+    </div>
+    <h2>TONKA<br><span class="gold">ALEKSIC</span></h2>
+    <p data-i18n="heroText">
+      Tvoja cesta k silnejšiemu a sebavedomejšiemu ja
+      začína práve tu.
+    </p>
+    <a href="#contact" class="btn" data-i18n="start">
+      CHCEM ZAČAŤ
+    </a>
+    <a href="#training" class="btn outline" data-i18n="discover">
+      OBJAVIŤ TRÉNINGY
+    </a>
+  </div>
+</section>
+
+<section class="content" id="about">
+  <div class="eyebrow">TONKA ALEKSIC</div>
+  <h2 class="section-title" data-i18n="about">O mne</h2>
+  <p data-i18n="aboutText">
+    Som Tonka Aleksic, osobná fitness trénerka v Bratislave.
+    Verím, že každý človek má potenciál posúvať svoje hranice.
+    Mojím cieľom je pomôcť ti objaviť silu, motiváciu
+    a radosť z pohybu.
+  </p>
+</section>
+
+<section class="content" id="training">
+  <h2 class="section-title" data-i18n="training">Tréningy</h2>
+  <div class="cards">
+    <div class="card">
+      <h3 data-i18n="individual">Individuálny tréning</h3>
+      <p data-i18n="individualText">
+        Osobný prístup a tréning prispôsobený tvojim cieľom.
+      </p>
+    </div>
+    <div class="card">
+      <h3 data-i18n="motivation">Motivácia a podpora</h3>
+      <p data-i18n="motivationText">
+        Spoločne budeme pracovať na tvojom pokroku.
+      </p>
+    </div>
+    <div class="card">
+      <h3 data-i18n="progress">Tvoja cesta</h3>
+      <p data-i18n="progressText">
+        Každý krok vpred sa počíta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="content" id="price">
+  <h2 class="section-title" data-i18n="pricing">Cenník</h2>
+  <div class="card">
+    <h3 data-i18n="individual">Individuálny tréning</h3>
+    <div class="price">20 €</div>
+    <p data-i18n="perHour">za 1 hodinu</p>
+    <a href="#contact" class="btn" data-i18n="book">
+      DOHODNÚŤ TRÉNING
+    </a>
+  </div>
+</section>
+
+<section class="content contact" id="contact">
+  <h2 class="section-title" data-i18n="contact">Kontakt</h2>
+  <p data-i18n="contactText">
+    Chceš začať svoju fitness cestu?
+    Napíš mi a dohodneme sa na tréningu.
+  </p>
+  <a class="btn"
+     href="https://www.instagram.com/aleksictonka/"
+     target="_blank"
+     rel="noopener noreferrer">
+     INSTAGRAM @ALEKSICTONKA
+  </a>
+</section>
+</main>
+
+<footer>
+  © 2026 TONKA ALEKSIC | FITNESS BRATISLAVA
+</footer>
+
+<script>
+const translations = {
+sk:{
+  slogan:"SILA. ELEGANCIA. ODHODLANIE.",
+  enter:"VSTÚPIŤ",
+  home:"Domov",
+  about:"O mne",
+  training:"Tréningy",
+  pricing:"Cenník",
+  contact:"Kontakt",
+  location:"OSOBNÁ FITNESS TRÉNERKA | BRATISLAVA",
+  heroText:"Tvoja cesta k silnejšiemu a sebavedomejšiemu ja začína práve tu.",
+  start:"CHCEM ZAČAŤ",
+  discover:"OBJAVIŤ TRÉNINGY",
+  aboutText:"Som Tonka Aleksic, osobná fitness trénerka v Bratislave. Verím, že každý človek má potenciál posúvať svoje hranice. Mojím cieľom je pomôcť ti objaviť silu, motiváciu a radosť z pohybu.",
+  individual:"Individuálny tréning",
+  individualText:"Osobný prístup a tréning prispôsobený tvojim cieľom.",
+  motivation:"Motivácia a podpora",
+  motivationText:"Spoločne budeme pracovať na tvojom pokroku.",
+  progress:"Tvoja cesta",
+  progressText:"Každý krok vpred sa počíta.",
+  perHour:"za 1 hodinu",
+  book:"DOHODNÚŤ TRÉNING",
+  contactText:"Chceš začať svoju fitness cestu? Napíš mi a dohodneme sa na tréningu."
+},
+en:{
+  slogan:"STRENGTH. ELEGANCE. DETERMINATION.",
+  enter:"ENTER",
+  home:"Home",
+  about:"About me",
+  training:"Training",
+  pricing:"Pricing",
+  contact:"Contact",
+  location:"PERSONAL FITNESS TRAINER | BRATISLAVA",
+  heroText:"Your journey to a stronger, more confident you starts here.",
+  start:"GET STARTED",
+  discover:"EXPLORE TRAINING",
+  aboutText:"I'm Tonka Aleksic, a personal fitness trainer in Bratislava. I believe everyone has the potential to push their limits. My goal is to help you discover strength, motivation and the joy of movement.",
+  individual:"Personal training",
+  individualText:"Individual attention and training tailored to your goals.",
+  motivation:"Motivation and support",
+  motivationText:"Together, we will work towards your progress.",
+  progress:"Your journey",
+  progressText:"Every step forward counts.",
+  perHour:"per hour",
+  book:"BOOK A SESSION",
+  contactText:"Ready to start your fitness journey? Message me to arrange a session."
+},
+sr:{
+  slogan:"SNAGA. ELEGANCIJA. ODLUČNOST.",
+  enter:"UĐI",
+  home:"Početna",
+  about:"O meni",
+  training:"Treninzi",
+  pricing:"Cenovnik",
+  contact:"Kontakt",
+  location:"LIČNI FITNES TRENER | BRATISLAVA",
+  heroText:"Tvoj put ka snažnijoj i samouverenijoj verziji sebe počinje ovde.",
+  start:"ŽELIM DA POČNEM",
+  discover:"POGLEDAJ TRENINGE",
+  aboutText:"Ja sam Tonka Aleksic, lični fitnes trener u Bratislavi. Verujem da svako ima potencijal da pomeri svoje granice. Moj cilj je da ti pomognem da otkriješ snagu, motivaciju i radost kretanja.",
+  individual:"Individualni trening",
+  individualText:"Lični pristup i trening prilagođen tvojim ciljevima.",
+  motivation:"Motivacija i podrška",
+  motivationText:"Zajedno ćemo raditi na tvom napretku.",
+  progress:"Tvoj put",
+  progressText:"Svaki korak napred je važan.",
+  perHour:"za jedan sat",
+  book:"ZAKAŽI TRENING",
+  contactText:"Želiš da započneš svoj fitnes put? Pošalji mi poruku da dogovorimo trening."
+}
+};
+
+function changeLanguage(lang) {
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.dataset.i18n;
+    if(translations[lang][key]) {
+      el.textContent=translations[lang][key];
+    }
+  });
+  document.querySelectorAll("[data-lang]").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.lang===lang);
+    btn.setAttribute("aria-pressed",String(btn.dataset.lang===lang));
+  });
+  try {localStorage.setItem("tonka-lang",lang)} catch(e) {}
+}
+document.querySelectorAll("[data-lang]").forEach(btn=>{
+  btn.addEventListener("click",()=>changeLanguage(btn.dataset.lang));
+});
+
+const intro=document.getElementById("intro");
+let introTimer;
+function closeIntro() {
+  clearTimeout(introTimer);
+  intro.classList.add("hide");
+}
+document.getElementById("skip").addEventListener("click",closeIntro);
+introTimer=setTimeout(closeIntro,4000);
+
+let saved="sk";
+try {saved=localStorage.getItem("tonka-lang")||"sk"} catch(e) {}
+changeLanguage(translations[saved]?saved:"sk");
+</script>
+</body>
+</html>
