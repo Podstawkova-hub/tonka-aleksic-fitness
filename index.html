@@ -33,7 +33,7 @@ button{cursor:pointer}
   position:absolute;inset:0;
   background-image:linear-gradient(0deg,rgba(0,0,0,.70),transparent 52%),
   url("WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg");
-  background-size:cover;background-position:center 35%;
+  background-size:contain;background-position:center center;background-repeat:no-repeat;background-color:#100d09;
   animation:zoom 5s ease-out both;
 }
 @keyframes zoom{from{transform:scale(1.035)}to{transform:scale(1)}}
@@ -69,14 +69,14 @@ header{
 nav{display:flex;gap:18px;flex-wrap:wrap}
 nav a:hover{color:var(--gold)}
 .hero{
-  min-height:490px;display:flex;align-items:center;
-  padding:65px 7%;
+  min-height:610px;display:flex;align-items:center;
+  padding:75px 7%;
   background:
-  linear-gradient(90deg,rgba(15,13,11,.85) 0%,rgba(15,13,11,.60) 38%,rgba(15,13,11,.08) 100%),
-  url("WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg")
-  center 40%/cover no-repeat;
+  linear-gradient(90deg,rgba(15,12,8,.05) 0%,rgba(15,12,8,.08) 38%,rgba(15,12,8,.88) 68%,#15100b 100%),
+  url("image.png") left center/cover no-repeat;
+  justify-content:flex-end;
 }
-.hero-content{max-width:510px}
+.hero-content{max-width:490px;width:44%;padding:25px 0;text-shadow:0 2px 8px #000}
 .eyebrow{
   color:#f0c574;text-transform:uppercase;
   letter-spacing:3px;font-size:12px;font-weight:bold;
@@ -111,7 +111,7 @@ section.content p{
 }
 .about-layout{
   display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
+  grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
   gap:45px;align-items:center;
 }
 .about-photo{
@@ -134,7 +134,7 @@ section.content p{
 .price{font-size:52px;font-weight:900;color:#efc775}
 .contact{
   text-align:center;
-  background:linear-gradient(#29231a,#17140f);
+  background:linear-gradient(125deg,#3a2c1c,#211b14);
   border:1px solid #71562d;
   border-radius:15px;
   margin-bottom:65px!important;
@@ -147,10 +147,11 @@ footer{
 @media(max-width:760px){
   header{justify-content:center;padding:12px 3%}
   nav{justify-content:center;gap:13px;font-size:13px}
-  .hero{min-height:430px;padding:50px 6%;background-position:58% 35%}
+  .hero{min-height:680px;padding:370px 6% 50px;justify-content:flex-start;
+    background:linear-gradient(0deg,#15100b 0%,rgba(15,12,8,.9) 17%,transparent 72%),url("image.png") 24% top/auto 70% no-repeat,#15100b}
   .hero h2{font-size:45px}
-  .hero-content{max-width:85%}
-  .intro-photo{background-position:52% 35%}
+  .hero-content{max-width:100%;width:100%}
+  .intro-photo{background-position:center center;background-size:contain}
   .intro-content{padding:25px 6% 10vh}
   .intro-content h1{font-size:42px}
   .intro-languages{top:12px;right:12px}
@@ -161,6 +162,13 @@ footer{
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
 }
+/* Elegantné zlaté akcenty a čitateľnosť */
+.hero h2{font-size:clamp(43px,4.3vw,65px)}
+.hero-content{background:linear-gradient(90deg,transparent,rgba(22,16,10,.20));border-radius:16px}
+#about{padding-top:90px;padding-bottom:90px}
+#about .section-title{font-size:clamp(42px,5vw,66px)}
+.card{box-shadow:0 12px 28px rgba(0,0,0,.18)}
+@media(max-width:760px){.hero-content{background:none}.hero h2{font-size:44px}}
 </style>
 </head>
 <body>
@@ -223,7 +231,7 @@ footer{
       <a href="#contact" class="btn" data-i18n="book">DOHODNÚŤ TRÉNING</a>
     </div>
     <img class="about-photo"
-      src="WhatsApp%20Image%202026-10-16%20at%2009.50.37.jpeg"
+      src="image.png"
       alt="Tonka Aleksic – fitness trénerka"
       loading="lazy">
   </div>
