@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TONKA ALEKSIC | Fitness Bratislava</title>
 <meta name="description" content="Tonka Aleksic – osobná fitness trénerka v Bratislave. Individuálne tréningy, motivácia a cesta k sile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
 <style>
 :root{
  --gold:#e5b85f;
@@ -70,7 +73,7 @@ p{line-height:1.7}
 /* HLAVNÁ NAVIGÁCIA */
 header{
  position:sticky;top:0;z-index:40;
- background:#110f0deF;
+ background:#110f0def;
  border-bottom:1px solid #76582e;
  padding:13px 5%;
  display:flex;justify-content:space-between;
@@ -108,13 +111,22 @@ nav a:hover{color:var(--gold)}
  text-transform:uppercase;
  font-size:11px;font-weight:800;
 }
-.hero-copy h1{
- font-size:clamp(42px,4.4vw,72px);
- line-height:1.05;margin:20px 0;
+
+/* ZLATÉ MOTTO – PLAYFAIR DISPLAY BOLD ITALIC */
+.hero-copy .hero-motto{
+ font-family:"Playfair Display",Georgia,serif;
+ font-weight:700;
+ font-style:italic;
+ font-size:clamp(32px,3.25vw,56px);
+ line-height:1.35;
+ letter-spacing:.2px;
+ max-width:650px;
+ margin:0;
+ color:#f5cd77;
+ text-shadow:
+ 0 0 12px rgba(229,184,95,.38),
+ 0 0 30px rgba(229,184,95,.17);
 }
-.hero-copy h1 span{color:var(--gold)}
-.hero-copy p{font-size:18px;max-width:440px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
 
 /* KOMPAKTNÉ SEKCIE */
 .container{max-width:1170px;margin:auto;padding:0 28px}
@@ -123,7 +135,8 @@ nav a:hover{color:var(--gold)}
  background:linear-gradient(120deg,#1b1712,#292116);
 }
 .about-grid{
- display:grid;grid-template-columns:1.25fr .75fr;
+ display:grid;
+ grid-template-columns:1.25fr .75fr;
  gap:48px;align-items:center;
 }
 .about p{font-size:17px}
@@ -138,7 +151,7 @@ nav a:hover{color:var(--gold)}
  border-radius:8px;
 }
 
-/* TRÉNINGY, CENNÍK, KONTAKT V JEDNEJ KOMPAKTNEJ ČASTI */
+/* TRÉNINGY, CENNÍK, KONTAKT */
 .services{
  padding:55px 0 65px;
  background:linear-gradient(135deg,#191511,#292116);
@@ -157,17 +170,27 @@ nav a:hover{color:var(--gold)}
  margin-bottom:16px;
  border-bottom:1px solid #655033;
 }
-.service h3{font-size:17px;color:var(--gold);margin-bottom:7px}
-.service p{font-size:14px;color:#eee3d1;margin:0}
+.service h3{
+ font-size:17px;
+ color:var(--gold);
+ margin-bottom:7px;
+}
+.service p{
+ font-size:14px;
+ color:#eee3d1;
+ margin:0;
+}
 .price{
  color:var(--gold);
- font-size:45px;font-weight:900;
+ font-size:45px;
+ font-weight:900;
  margin:12px 0 5px;
 }
 .small{font-size:14px;color:var(--muted)}
 .contact-copy{font-size:15px}
 .contact-status{
- color:var(--gold);font-size:13px;
+ color:var(--gold);
+ font-size:13px;
  margin-top:15px;
 }
 footer{
@@ -179,21 +202,30 @@ footer{
 /* MOBILY */
 @media(max-width:850px){
  header{flex-wrap:wrap;justify-content:center}
- nav{order:3;width:100%;justify-content:center;gap:13px;flex-wrap:wrap}
+ nav{
+  order:3;width:100%;
+  justify-content:center;
+  gap:13px;flex-wrap:wrap;
+ }
  .hero{display:block;min-height:0}
  .hero-photo{
-   height:420px;min-height:0;
-   background-image:
+  height:420px;min-height:0;
+  background-image:
    linear-gradient(0deg,#17130f 0%,transparent 40%),
    url("image.png");
-   background-size:100% 100%,contain;
-   background-position:center,center;
+  background-size:100% 100%,contain;
+  background-position:center,center;
  }
  .hero-copy{padding:12px 7% 45px}
- .hero-copy h1{font-size:46px}
+ .hero-copy .hero-motto{
+  font-size:clamp(30px,7vw,44px);
+ }
  .about-grid{grid-template-columns:1fr}
  .about-image{max-height:260px}
- .services-grid{grid-template-columns:1fr;gap:24px}
+ .services-grid{
+  grid-template-columns:1fr;
+  gap:24px;
+ }
  .services{padding:35px 0}
  .intro-text{padding:0 6% 8%}
  .intro-text h1{font-size:43px}
@@ -240,13 +272,10 @@ footer{
 <section class="hero" id="home">
  <div class="hero-photo" role="img" aria-label="Tonka Aleksic vo fitness prostredí"></div>
  <div class="hero-copy">
-  <div class="eyebrow" data-t="location">OSOBNÁ FITNESS TRÉNERKA | BRATISLAVA</div>
-  <h1>TONKA<br><span>ALEKSIC</span></h1>
-  <p data-t="heroText">Sila nie je len o svaloch. Je o odhodlaní, sebavedomí a viere v seba.</p>
-  <div class="hero-buttons">
-   <a href="#contact" class="btn" data-t="start">CHCEM ZAČAŤ</a>
-   <a href="#about" class="btn btn-outline" data-t="discover">SPOZNAJ MA</a>
-  </div>
+  <p class="hero-motto" data-t="heroText">
+   Sila nie je len o svaloch. Je o odhodlaní,
+   sebavedomí a viere v seba.
+  </p>
  </div>
 </section>
 
@@ -268,7 +297,9 @@ footer{
     čo všetko dokážeš.
    </p>
    <div class="achievement">
-    <strong data-t="achievementTitle">SKÚSENOSTI Z VRCHOLOVÉHO ŠPORTU</strong>
+    <strong data-t="achievementTitle">
+     SKÚSENOSTI Z VRCHOLOVÉHO ŠPORTU
+    </strong>
     <p data-t="achievementText">
      Tonka sa zúčastnila aj majstrovstiev sveta.
      Jej športová cesta a skúsenosti sú súčasťou
@@ -282,16 +313,19 @@ footer{
 
 <section class="services" id="training">
  <div class="container services-grid">
-
   <div>
    <h2 data-t="training">Tréningy</h2>
    <div class="service">
     <h3 data-t="individual">Individuálny tréning</h3>
-    <p data-t="individualText">Osobný prístup a tréning prispôsobený tvojim cieľom.</p>
+    <p data-t="individualText">
+     Osobný prístup a tréning prispôsobený tvojim cieľom.
+    </p>
    </div>
    <div class="service">
     <h3 data-t="motivation">Motivácia a podpora</h3>
-    <p data-t="motivationText">Spoločne budeme pracovať na tvojom pokroku.</p>
+    <p data-t="motivationText">
+     Spoločne budeme pracovať na tvojom pokroku.
+    </p>
    </div>
    <div class="service">
     <h3 data-t="progress">Tvoja cesta</h3>
@@ -301,10 +335,14 @@ footer{
 
   <div id="price">
    <h2 data-t="pricing">Cenník</h2>
-   <div class="eyebrow" data-t="individual">Individuálny tréning</div>
+   <div class="eyebrow" data-t="individual">
+    Individuálny tréning
+   </div>
    <div class="price">20 €</div>
    <p class="small" data-t="perHour">za 1 hodinu</p>
-   <a href="#contact" class="btn" data-t="book">DOHODNÚŤ TRÉNING</a>
+   <a href="#contact" class="btn" data-t="book">
+    DOHODNÚŤ TRÉNING
+   </a>
   </div>
 
   <div id="contact">
@@ -318,7 +356,6 @@ footer{
     E-mailový kontakt čoskoro doplníme.
    </p>
   </div>
-
  </div>
 </section>
 </main>
@@ -330,11 +367,15 @@ const translations={
 sk:{
  slogan:"SILA. ELEGANCIA. ODHODLANIE.",
  enter:"VSTÚPIŤ",
- home:"Domov",about:"O mne",training:"Tréningy",
- pricing:"Cenník",contact:"Kontakt",
+ home:"Domov",
+ about:"O mne",
+ training:"Tréningy",
+ pricing:"Cenník",
+ contact:"Kontakt",
  location:"OSOBNÁ FITNESS TRÉNERKA | BRATISLAVA",
  heroText:"Sila nie je len o svaloch. Je o odhodlaní, sebavedomí a viere v seba.",
- start:"CHCEM ZAČAŤ",discover:"SPOZNAJ MA",
+ start:"CHCEM ZAČAŤ",
+ discover:"SPOZNAJ MA",
  aboutText:"Volám sa Tonka Aleksic a fitness je mojou vášňou. Ako osobná trénerka v Bratislave verím, že skutočná sila sa začína v hlave. Každý človek má svoj príbeh, svoje ciele a vlastnú cestu k úspechu.",
  aboutText2:"Mojím poslaním je pomáhať ľuďom budovať silu, sebavedomie a zdravý vzťah k pohybu. Nejde len o tréning. Ide o to, aby si objavil, čo všetko dokážeš.",
  achievementTitle:"SKÚSENOSTI Z VRCHOLOVÉHO ŠPORTU",
@@ -353,11 +394,15 @@ sk:{
 en:{
  slogan:"STRENGTH. ELEGANCE. DETERMINATION.",
  enter:"ENTER",
- home:"Home",about:"About me",training:"Training",
- pricing:"Pricing",contact:"Contact",
+ home:"Home",
+ about:"About me",
+ training:"Training",
+ pricing:"Pricing",
+ contact:"Contact",
  location:"PERSONAL FITNESS TRAINER | BRATISLAVA",
  heroText:"Strength is not just about muscles. It's about determination, confidence and believing in yourself.",
- start:"GET STARTED",discover:"GET TO KNOW ME",
+ start:"GET STARTED",
+ discover:"GET TO KNOW ME",
  aboutText:"My name is Tonka Aleksic and fitness is my passion. As a personal trainer in Bratislava, I believe that true strength starts in the mind. Everyone has their own story, goals and path to success.",
  aboutText2:"My mission is to help people build strength, confidence and a healthy relationship with movement. It's not just about training. It's about discovering what you can achieve.",
  achievementTitle:"EXPERIENCE IN COMPETITIVE SPORT",
@@ -376,11 +421,15 @@ en:{
 sr:{
  slogan:"SNAGA. ELEGANCIJA. ODLUČNOST.",
  enter:"UĐI",
- home:"Početna",about:"O meni",training:"Treninzi",
- pricing:"Cenovnik",contact:"Kontakt",
+ home:"Početna",
+ about:"O meni",
+ training:"Treninzi",
+ pricing:"Cenovnik",
+ contact:"Kontakt",
  location:"LIČNI FITNES TRENER | BRATISLAVA",
  heroText:"Snaga nisu samo mišići. To su odlučnost, samopouzdanje i vera u sebe.",
- start:"ŽELIM DA POČNEM",discover:"UPOZNAJ ME",
+ start:"ŽELIM DA POČNEM",
+ discover:"UPOZNAJ ME",
  aboutText:"Zovem se Tonka Aleksic i fitnes je moja strast. Kao lični trener u Bratislavi verujem da prava snaga počinje u glavi. Svako ima svoju priču, ciljeve i put do uspeha.",
  aboutText2:"Moja misija je da pomognem ljudima da izgrade snagu, samopouzdanje i zdrav odnos prema kretanju. Nije reč samo o treningu, već o otkrivanju sopstvenih mogućnosti.",
  achievementTitle:"ISKUSTVO U TAKMIČARSKOM SPORTU",
@@ -410,25 +459,35 @@ function setLanguage(lang){
   button.classList.toggle("active",active);
   button.setAttribute("aria-pressed",String(active));
  });
- try{localStorage.setItem("tonka-lang",lang)}catch(e){}
+ try{
+  localStorage.setItem("tonka-lang",lang)
+ }catch(e){}
 }
 
 document.querySelectorAll("[data-lang]").forEach(button=>{
- button.addEventListener("click",()=>setLanguage(button.dataset.lang));
+ button.addEventListener("click",()=>{
+  setLanguage(button.dataset.lang);
+ });
 });
 
 const intro=document.getElementById("intro");
 let introTimer;
+
 function closeIntro(){
  clearTimeout(introTimer);
  intro.classList.add("hidden");
 }
+
 document.getElementById("enter").addEventListener("click",closeIntro);
 introTimer=setTimeout(closeIntro,4000);
 
 let initialLang="sk";
-try{initialLang=localStorage.getItem("tonka-lang")||"sk"}catch(e){}
+try{
+ initialLang=localStorage.getItem("tonka-lang")||"sk";
+}catch(e){}
+
 setLanguage(initialLang);
 </script>
 </body>
 </html>
+
