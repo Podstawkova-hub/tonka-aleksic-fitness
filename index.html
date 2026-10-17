@@ -482,6 +482,33 @@ footer {
   color: #d5b67a;
 }
 
+/* PREHRAVAC HYMNY */
+
+.hymn-player {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+}
+
+.hymn-button {
+  background: linear-gradient(135deg,#e5b85d,#ffe4a1);
+  color: #15110e;
+  border: 1px solid #ffe4a1;
+  border-radius: 30px;
+  padding: 13px 20px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 25px rgba(229,184,93,.3);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.hymn-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 30px rgba(229,184,93,.5);
+}
+
 /* TABLET */
 
 @media(max-width:800px) {
@@ -703,12 +730,23 @@ footer {
   footer {
     font-size: 10px;
   }
+
+  .hymn-player {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hymn-button {
+    padding: 11px 15px;
+    font-size: 10px;
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
   .sparkles span { animation: none; }
   html { scroll-behavior: auto; }
 }
+
 </style>
 </head>
 
@@ -1090,6 +1128,24 @@ footer {
   © 2026 TONKA ALEKSIC | FITNESS BRATISLAVA
 </footer>
 
+<!-- HYMNA WEBU -->
+
+<div class="hymn-player">
+  <button
+    id="hymnToggle"
+    class="hymn-button"
+    type="button"
+    aria-pressed="false">
+    ♫ PREHRAŤ HYMNU
+  </button>
+
+  <audio
+    id="hymnAudio"
+    preload="none"
+    src="Sila%20v%20tebe%20III%20%28top%29.mp3">
+  </audio>
+</div>
+
 <script>
 
 /* TRI JAZYKY */
@@ -1281,6 +1337,36 @@ intro.addEventListener("click", (event) => {
 });
 
 setTimeout(closeIntro, 6000);
+
+/* OVLADANIE HYMNY */
+
+const hymnAudio = document.getElementById("hymnAudio");
+const hymnToggle = document.getElementById("hymnToggle");
+
+function updateHymnButton() {
+  const playing = !hymnAudio.paused;
+  hymnToggle.textContent = playing
+    ? "♫ POZASTAVIŤ HYMNU"
+    : "♫ PREHRAŤ HYMNU";
+  hymnToggle.setAttribute("aria-pressed", String(playing));
+}
+
+hymnToggle.addEventListener("click", async () => {
+  if (!hymnAudio.paused) {
+    hymnAudio.pause();
+    return;
+  }
+
+  try {
+    await hymnAudio.play();
+  } catch (err) {
+    console.error("Hymnu sa nepodarilo prehrať:", err);
+  }
+});
+
+hymnAudio.addEventListener("play", updateHymnButton);
+hymnAudio.addEventListener("pause", updateHymnButton);
+hymnAudio.addEventListener("ended", updateHymnButton);
 
 </script>
 
